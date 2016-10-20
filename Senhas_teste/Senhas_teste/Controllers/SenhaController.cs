@@ -12,7 +12,6 @@ namespace Senhas_teste.Controllers
 {
     public class SenhaController : Controller
     {
-
         /*private SenhasContext db = new SenhasContext();
 
         // GET: Senha
