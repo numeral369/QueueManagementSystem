@@ -1,0 +1,53 @@
+﻿@model Senhas_teste.Models.SenhaModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>SenhaModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+
+        <div>
+            <p class="btn btn-primary">@Html.ActionLink("Senhas A", "IndexA", new { tipo = "0" })</p>
+            <p class="btn btn-primary">@Html.ActionLink("Senhas B", "IndexB", new { tipo = "1" })</p>
+            <p class="btn btn-primary">@Html.ActionLink("Senhas C", "IndexC", new { tipo = "2" })</p>
+            <p class="btn btn-primary">@Html.ActionLink("Senhas D", "IndexD", new { tipo = "3" })</p>
+            <p class="btn btn-primary">@Html.ActionLink("Senhas E", "IndexE", new { tipo = "4" })</p>
+        </div>
+        <div>
+            <div>
+                <!--<p class="btn btn-primary">@Html.ActionLink("<", "IndexA", new { trocar = "<" })</p>-->
+                <button type="button">@Html.ActionLink("<", "IndexA", new { trocar = "<" })</button>
+                <a>
+                    @Html.DisplayFor(model => model.TipoDeSenha)
+                    @Html.DisplayFor(model => model.NumeroDaSenha)
+                </a>
+                <!--<p class="btn btn-primary">@Html.ActionLink(">", "IndexA", new { trocar = ">" })</p>-->
+                <button type="button">@Html.ActionLink(">", "IndexA", new { trocar = ">" })</button>
+            </div>
+            <div>
+                <p class="btn btn-primary">@Html.ActionLink("Chamar", "IndexA", new { senhaChamadaId = Model.ID })</p>
+            </div>
+            <div>
+                <p class="btn btn-primary">@Html.ActionLink("Cancelar", "IndexA", new { atendimento = "cancelado" })</p>
+                <p class="btn btn-primary">@Html.ActionLink("Ok", "IndexA", new { atendimento = "atendido" })</p>
+                <p class="btn btn-primary"  >@Html.ActionLink("Redirecionar", "IndexA", new { atendimento = "redirecionado" })</p>
+            </div>
+            <div>
+                <p>Senhas emitidas</p>
+                <p>@ViewData["quantidadeSenhasEmitidas"]</p>
+            </div>
+            <div>
+                <p>Máximo</p>
+                <p>@ViewData["maximoSenhasHoje"]</p>
+            </div>
+        </div>
+
+    </div>

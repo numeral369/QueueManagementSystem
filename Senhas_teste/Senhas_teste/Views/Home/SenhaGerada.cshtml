@@ -1,0 +1,16 @@
+﻿@model Senhas_teste.Models.SenhaModel
+
+@{
+    ViewBag.Title = "SenhaGerada";
+}
+
+<h2>SenhaGerada</h2>
+<div>
+    <div style="font-size:100px">
+        <a>@Html.DisplayFor(model => model.TipoDeSenha)</a>
+        <a>@Html.DisplayFor(model => model.NumeroDaSenha)</a>
+    </div>
+
+    <p>@Html.DisplayFor(model => model.DataDeEmissao)</p>
+</div>
+

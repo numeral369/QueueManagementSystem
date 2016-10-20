@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "TirarSenha";
+}
+
+<script>
+    var myVar = setInterval(myTimer, 10000);
+
+    //location.href = "http://google.com.br";
+
+    function myTimer() {
+        var d = new Date();
+        location.reload();
+    }
+
+    function senhaEscolhida(ele, tipo) {
+        if (confirm("Quer realmente tirar uma senha " + ele.innerHTML + "?") == true) {
+            location.href = "/Home/SenhaGerada?tipo="+tipo;
+        } else {
+        }
+    }
+</script>
+
+<div class="jumbotron">
+    <p class="btn btn-primary" onclick="senhaEscolhida(this , 0)">A | Licenciatura</p>
+    <p class="btn btn-primary" onclick="senhaEscolhida(this, 1)">B | Krav Maga</p>
+    <p class="btn btn-primary" onclick="senhaEscolhida(this, 2)">C | TechCenter</p>
+    <p class="btn btn-primary" onclick="senhaEscolhida(this, 3)">D | WC</p>
+    <p class="btn btn-primary" onclick="senhaEscolhida(this, 4)">E | Bar</p>
+    <p id="demo"></p>
+</div>
